@@ -1,0 +1,93 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#mainNav {
+  background-color: rgb(22, 22, 22);
+  color: white;
+}
+
+#minimenu {
+  float: right;
+  margin-right: 60px;
+}
+
+.htop div,
+#about .container,
+#contact .container {
+  background-color: rgb(0, 0, 0) transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  color: white;
+  border-radius: 15px;
+}
+
+#sidemenu {
+  padding: 4em 0;
+}
+
+#sidemenu .container {
+  padding: 2em;
+}
+
+.htop {
+  position: relative;
+  top: 25px;
+  margin-top: 70px;
+  width: 100%;
+  text-align: center;
+  min-height: auto;
+  background-image: url(https://c.static-nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1349,c_limit/tpqid8vgfey6m4ke86te/123-joyride-cdp-apla-xa-xp.jpg);
+  /*background-image: url(http://placehold.it/1600x700);*/
+  background-size: cover;
+  color: white;
+  font-size: 1em;
+  padding: 3em;
+}
+
+#about {
+  background-image: url(https://www.gannett-cdn.com/presto/2019/07/25/USAT/42737008-b0e5-447d-bc3e-1d84acd25274-nike-joyride-cushioning-9_hd_1600.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp);
+  /*background-image: url(http://placehold.it/1600x700);*/
+  background-size: cover;
+  background-position: center;
+}
+
+#contact {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(98deg, rgba(34, 193, 195, 1) 0%, rgba(209, 45, 253, 1) 100%);
+  /*background-image: url(http://placehold.it/1600x700);*/
+  background-size: cover;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.img-fluid:hover {
+  animation: zoom 0.5s forwards;
+  transform: scale(1);
+  margin-bottom: 1rem;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@media (min-width: 768px) {
+  .htop {
+    min-height: 100%;
+  }
+
+  .msection {
+    min-height: 100%;
+    padding: 6em 0;
+  }
+}

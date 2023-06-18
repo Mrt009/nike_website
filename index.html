@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Bootstrap Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+    integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body,
+    html {
+      height: 100%;
+      width: 100%;
+
+
+    }
+
+    #mainNav {
+      background-color: rgb(22, 22, 22);
+      color: white;
+
+    }
+
+    #minimenu {
+      float: right;
+      margin-right: 60px;
+    }
+
+    #cat{
+        border-radius: 15%;
+        width:20%;
+        margin-top:10vh;
+    }
+
+    .htop div,
+    #about .container,
+    #contact .container {
+      background-color: rgb(0, 0, 0) transparent;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      color: white;
+      border-radius: 15px;
+    }
+
+    #sidemenu {
+      padding: 4em 0;
+    }
+
+    #sidemenu .container {
+      padding: 2em;
+    }
+
+    .htop {
+      position: relative;
+      top: 25px;
+      margin-top: 70px;
+      width: 100%;
+      text-align: center;
+      min-height: auto;
+      background-image: url(https://i.pinimg.com/736x/7b/6d/41/7b6d41e3b02a4b66bd028a6c021241d2--nike-behance.jpg);
+      /*background-image: url(http://placehold.it/1600x700);*/
+      background-size: cover;
+      color: white;
+      font-size: 1em;
+      padding: 3em;
+    }
+
+
+    #about {
+      background-image: url(https://www.gannett-cdn.com/presto/2019/07/25/USAT/42737008-b0e5-447d-bc3e-1d84acd25274-nike-joyride-cushioning-9_hd_1600.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp);
+      /*background-image: url(http://placehold.it/1600x700);*/
+      background-size: cover;
+      background-position: center;
+    }
+
+    #contact {
+      background: rgb(34, 193, 195);
+      background: linear-gradient(98deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(209, 45, 253, 1) 100%);
+      /*background-image: url(http://placehold.it/1600x700);*/
+
+
+      background-size: cover;
+    }
+
+
+    .card {
+      overflow: hidden;
+    }
+
+ 
+
+    .img-fluid:hover {
+      animation: zoom 0.5s forwards;
+      transform: scale(1);
+      margin-bottom: 1rem;
+    }
+
+    @keyframes zoom {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.2);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .htop {
+        min-height: 100%;
+      }
+
+      .msection {
+        min-height: 100%;
+        padding: 6em 0;
+      }
+    }
+
+
+    #dot{
+        width:90px;
+    }
+   .total
+       :hover {
+        opacity: 1;
+            transform: scale(1.5);
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#minimenu">
+  <!-- content -->
+  <nav id="mainNav" class="navbar navbar-full navbar-dark bg-faded navbar-fixed-top "
+    style="background-color: rgb(10, 9, 9);">
+    <button class="navbar-toggler hidden-sm-up light float-xs-right" type="button" data-toggle="collapse"
+      data-target="#minimenu"></button>
+    <a href="#"><img id="dot" src="data:image/png;base64,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" alt="logo" class="logo"></a>
+    <div id="minimenu" class="collapse navbar-toggleable-xs">
+      <ul class="nav navbar-nav text-uppercase ">
+        <li class="nav-item">
+          <a class="nav-link active" href="#home">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">products</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#contact">contact</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+
+  <header class="htop" id="home">
+    <div class="scrol">
+      <h1>Nike</h1>
+      <hr />
+      <p style="color:rgb(132, 242, 132);">
+        Nike is a global leader in athletic footwear, apparel, equipment, and accessories. Our mission is to bring innovation and inspiration to every athlete in the world. We believe in the power of sport to unite people, inspire positive change, and break down barriers. With a commitment to diversity, inclusion, and equality, we revolutionize the sports industry with iconic products that redefine athletic performance and style. Join us on our journey to unleash the potential of every athlete and make a difference through the power of sport.
+      </p>
+      <button type="button" class="btn btn-primary btn-lg mt-1" data-toggle="modal" data-target="#modal1">
+        Best Deals
+      </button>
+    </div>
+  </header>
+  <section id="about" class="msection">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ">
+          <p>
+            The iconic Nike swoosh logo was designed by Carolyn Davidson in 1971 and was purchased by Nike for just $35
+          </p>
+          <p>
+            The Air Jordan line of sneakers, created in collaboration with basketball legend Michael Jordan, revolutionized the sneaker industry and became one of Nike's most successful product lines
+          </p>
+          <p>
+            The company has a significant presence in the global sportswear market and operates retail stores and online platforms in over 170 countries.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 text-xs-center">
+          <h3>Headquater</h3>
+          <p>Beaverton, Oregon, United States</p>
+        </div>
+        <div class="col-md-3 text-xs-center">
+          <h3>Brand Ambassadors</h3>
+          <p>Serena Williams, LeBron James, Cristiano Ronaldo, Kylian Mbappé, Naomi Osaka, Simone Biles</p>
+        </div>
+        <div class="col-md-3 text-xs-center">
+          <h3>Commitment to Sustainability</h3>
+          <p>Nike Move to Zero initiative, use of recycled materials, reducing carbon emissions</p>
+        </div>
+        <div class="col-md-3 text-xs-center">
+          <h3>Cultural Impact</h3>
+          <p>Known for its "Just Do It" slogan, influence on streetwear fashion</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Nike, Inc. is a renowned multinational corporation specializing in the design, development, manufacturing, and marketing of athletic footwear, apparel, equipment, and accessories. Founded on January 25, 1964, as Blue Ribbon Sports (BRS) by Bill Bowerman and Phil Knight, Nike has since become a global leader in the sports industry.
+          </p>
+          <p>
+            Nike's journey is characterized by its relentless pursuit of innovation, commitment to performance, and dedication to serving athletes and enthusiasts worldwide. With a rich history spanning several decades, Nike continues to shape the future of sportswear and inspire individuals to unleash their full potential, both on and off the field.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="products" class="msection">
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-md-4 text-xs-center">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Air Jordan</h3>
+            </div>
+            <img
+              src="https://images.complex.com/complex/image/upload/c_crop,h_1088,w_2000,x_0,y_574/c_fill,dpr_auto,f_auto,fl_lossy,g_face,q_auto,w_1280/fuktpxc8lglksd7qqphr.jpg"
+              class="img-fluid" style="height:37vh;" />
+            <div class="card-block">
+              <p class="card-text">
+                Price:$370
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-xs-center">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Hood MMr</h3>
+            </div>
+            <img style="height:37vh;"
+              src="https://www.hoodmwr.com/wp-content/uploads/2021/11/types-of-nike-shoes1.jpg"
+              class="img-fluid" />
+            <div class="card-block">
+              <p class="card-text">
+                Price:$600
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-xs-center">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Air Jordan 1 Mid SE</h3>
+            </div>
+            <img 
+              src="https://static.dezeen.com/uploads/2019/07/nike-joyride-run-flyknit-design_dezeen_2364_sq-3-300x300.gif"
+              class="img-fluid" />
+            <div class="card-block">
+              <p class="card-text">
+                Price:$5600
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-xs-center">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Air Max</h3>
+            </div>
+            <img style="height:30vh"
+              src="https://cdn.footy.com/blog/2022/April/different-types-nike-air-max/air-max-1-v2.jpg "
+              class="img-fluid" />
+            <div class="card-block">
+              <p class="card-text">
+                Price:$790
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-xs-center">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Hood MWR</h3>
+            </div>
+            <img
+              src="https://www.hoodmwr.com/wp-content/uploads/2022/06/image-1600-27.jpg"
+              class="img-fluid" />
+            <div class="card-block">
+              <p class="card-text">
+                Price:$2300
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-xs-center">
+          <div class="card">
+            <div class="card-block">
+              <h3 class="card-title">Jordan 56</h3>
+            </div>
+            <img style="height:30vh;"
+              src="https://assets.ajio.com/medias/sys_master/root/20220602/zzqz/6298e268aeb26921af085379/-1117Wx1400H-460395711-white-MODEL.jpg "
+              class="img-fluid" />
+            <div class="card-block">
+              <p class="card-text">
+                Price:$1230
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="more">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Customer Care</h3>
+          <p>
+            At Nike, we value our customers and strive to provide exceptional customer care. Our dedicated team is committed to ensuring your satisfaction and addressing any inquiries or concerns you may have. We believe in building strong relationships with our customers by delivering personalized assistance and support.
+          </p>
+          <p>
+            Whether you have questions about product features, sizing, or need assistance with an order, our knowledgeable customer care representatives are here to help. We are available through various channels, including phone, email, and live chat, to provide prompt and reliable support.
+          </p>
+          <p>
+            Our goal is to exceed your expectations by delivering outstanding service and resolving any issues you may encounter. We take pride in our responsiveness and professionalism, and we continuously work to improve and enhance our customer care processes.
+
+
+          </p>
+          <p>
+            At Nike, we value your feedback and welcome your suggestions. We are constantly looking for ways to enhance your experience and ensure that you have a seamless and enjoyable shopping journey. Your satisfaction is our priority, and we are committed to delivering the highest level of customer care
+          </p>
+          <p>
+            Thank you for choosing Nike. We appreciate your trust and look forward to serving you with excellence.
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <aside id="sidemenu">
+    <div class="container text-xs-center bg-success text-white">
+      <h2>Add your email to the list to get the best deals first.</h2>
+      <button class="btn btn-outline-primary mt-2" data-toggle="modal" data-target="#modal2">
+        More Info
+      </button>
+    </div>
+  </aside>
+  <section id="contact" class="msection ">
+    <div class="con">
+      <h5 style="font-family: 'Caveat', cursive;Font-weight:400; color:#ffffff; left-margin:20vw; font-size:10px; font-size:70px; font-weight:bolder; margin-bottom:70px; ">
+        Contact us:</h5>
+      <h5 data-aos="fade-top" style=" font-size:28px; margin:0 0 28px 0;"></h5>
+    </div>
+    <div class="container">
+      <br>
+      <form>
+        <fieldset style="margin-top:20px;">
+          <div class="form-group">
+            <label for="uname" class="control-label col-md-4">Username</label>
+            <div class="col-md-8">
+              <input name="uname" id="uname" placeholder="Please Enter Your Name" class="form-control" type="text"
+                required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="uemail" class="control-label col-md-4">Email</label>
+            <div class="col-md-8">
+              <input name="uemail" id="uemail" placeholder="Your Email Address" class="form-control" type="email"
+                required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="umessage" class="control-label col-md-4" required>Message</label>
+            <div class="col-md-8">
+              <textarea class="form-control" rows="10" name="umessage" id="umessage" placeholder="Your Message"
+                required></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-4"></label>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-primary" style="margin-top:20px;  justify-content:center; text-align:center; margin-right:300px;">
+                send message
+              </button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+  <footer class="text-xs-center footerA bg-inverse text-white font-italic ">
+    <div class="social" style="background-color:black;">
+      <a  href="https://web.facebook.com/gocavite"  target="_blank"><img   id ="cat" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAACCCAMAAACXSEZJAAAAeFBMVEUPDw8BiPwAi/8QAAAHccwPDAYPFB8Ee+MAkf8JY7IAj/8Aif8PCAAGbskAjf8IasINNFwNOmkOJkEQER4Dge0PCg0MRnwKWqIGeNwLU5kIab0PJEMOMVwGc9IMPW8NNmELUpIPHTUOLVMOGy0QDBYNMVQLSoYNKkl67f8NAAACjklEQVR4nO2c4XKiMBRGISkSAkaLUZAua9vdtu//hl2otQnqkhFmnOR+5ycDM3ImJtwL+aIIAAAAAAAAAAAAAAAAAAAAAM8o+CSKe//+GSi2T7tVnd5Ivdo9bb3XwMtKC6XYjSgldFXye9/FNPi6Vnk8iVzVa68t8FKzaQo6mPZ5LCQ8nsHBPwsxT+59LzfDMzmHgziWmbdDoSj1xPngm1yXvi4RfD+Pgo69r0OBN7PMCB2s8VRCEj3MJ+Eh8nNqTBZzSlhAAiEJTIoTiqKEnCndVrvHI4fWskBDAtPNb7uEtq4lIUE1B24tgsnGqjooSJDPm8FzAD0J6v2sQCIngVXnRSI1Cax9Oa+OqElQzxfqAmIScn2pY0JMgqzstbHo4RttnhS6BGH2SxL+8vqrZ281pUKXII2BkPD9MtU9dmMucAlMGxJ4dnpFMTgrbAmq/ZHAH6916EOXsDQkVFfHS+ASVoaETF05CxIgARIgARIggZCEvEdaEmR+goaEOq3rOk0z82Ep7Y71pJaFQCWI3Xdv3bjE6Lj/SQn0E8TIa2ZemXUkUQnblTlJ0pSQ/G3xd6DRYxyVQGJ1GJGwEJDA3yAh4u+QMHhMCFfChf0MxtaIJYWPNNhy3XP4+LFQlIevg+u3yr40UAkxkz3CbLlnQh4Z1NShSjhitdzp9RMgARIgARIgARIgARIgARIgARI6ICGChB68mo9cN4e6SvB0c6jbNmFHCb5uE3bbMO4mwd8N407RAU4SPI4OcAqRcJLgcYiEU5yIiwSv40RcgmUcJPgdLOMSMTQqwfuIIYewqcEnfCGGTX3FjjX/iR3T1id8OsjYsWg8gM44NdQAOgAAAAAAAAAAAAAAAAAAAECMT7ZQOq1geuxzAAAAAElFTkSuQmCC" alt="facebook" /></a>
+      <a href="https://www.instagram.com/" target="_blank"><img id ="cat" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIEA5QMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABgcDBAUCAQj/xABJEAABAwICAwkKDAMJAAAAAAABAAIDBBEFBhIhMQdBUWGBkaGx0RMWIjJVcXOSk8EUFyMzN0NSYmNyddIVQrIkJkRUgqLh4vD/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAgMBBAUG/8QAOREBAAIBAgEHCwMDBAMAAAAAAAECAwQRBRIhMUFScaETFCIyUWGRscHR8BWBgiQ1QjNi4fEjNEP/2gAMAwEAAhEDEQA/AKcUmBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBA1oCAgICAgICAgICAgICAgICAgICAgICAgICDZoaKetk0YW6h4zjqDfOVdhwXzTtQduDLkLW3qJnvdwNGiPeV0acNpt6dvgztLN3v0P4vrqf6dh96UUk736H8X11j9Pw+9OMb73vUP4vrKPmOFKMJ3vUX43rrHmWFONPEne9RcM3rlQ8zwpxpane7Q/jeusTpMKcaOh3u0NjYzA8Omo+a4k40NJaVXluRjS+km7pYeI8WPIVRfT7c9ZV5OH3iN687hva6N7mPYWuabFrhYgrWnmaExMTtLyjAgICAgICAgICAgICAgICAgy0sD6moZDH4zzbzcanSk3vFY6WYjdNaWnjpIGwwtsxvTxld/HWuOvJqvjG3aGiqcQqW01DA+ed2xjBr/AOBxlMmWtY3tKc0isc6ZUW5jik0YfV1lNTuP1YBkI5RYLRtxCm/o1R8pWOps/FXVeVYPYHtVf6hHZ8WYz1jqPisqvKsHsHfuWPP/APb4pRqax/j4nxWVXlWD2B/csefe7xTjV17Pi+/FZVeVYfYHtWPPfd4pRra9nxDuW1dtWKwewPao+d+5Pz+vZ8XHxnIuM4XGZhHHVwtF3PpydJvGWnXzXUo1ES2sOsw5J2nmlGgLhSm7pRjcbMuHNmpXVcbflohd1v5m7/NtWvlrvzudxHRxanla9MfJElQ4AgICAgICAgICAgICAgICAg7GV4w6ve8/yRm3KQtrR/6u/sX6evKulbGPe9kcbS57yGtA3ydQC6c32dHye3PK4sPpMPyHlt1RUtDqgtBmc0eFM/eYL7w7Twrj3vfPkc/a2a+0ILiWfMfrZS6nqRQxX8FkDGk8pcDfoW1XT469Mbulj0WOI543lo99mZPLVT6rP2rM48XZ+f3XRo8PZ+f3eu+3Mnlmp9Vn7VHyeLs/P7rI0WDs/P7vozZmPy1U+qz9qjNMfs+f3TjQYOx8/u+99mZPLVT6rP2rHJp7E40Gn7HjP3bFFj+bq6Qx0WIV072i7mxxMdYcfgqExjjqRyaXR443vWI/efukOW89VTK1lBmBo8J+h3fQ0HRu2eGPPquqrUjphp6rhlPJzkwT79vsw7pGXIqQtxahjDI5n6M7GiwDzsfy7/H5ypUvPRKfCtVN98N57vsgjmhzHNOsOBClPQ7d6RasxKt3DRc5o2NJAVDw0xtMw+IwICAgICAgICAgICAgICAg7mUxetn9F71saadrN7h9eVknuWDkyFsuacMa8Xb3cHmBKuzX9CXS1VZrgtKVbrs0hqMLpr/JaMshHC67QOi/OqNPMRvLX4VSJi9u76q/0Vdy3YjG3cKwmuxepFPh8BlePGJNmsHC47wUbZIjpYy5MeCvKyTt857k8w7cyp9FrsUr5nP32UwDWjlIJPQqZzT1ORk4tf8A+deb3/n3dCbc2wNzLRyVsTvttmB6wQo+Vt1q68V1ET1T+32RnHcgV+HxmbD5PhsTfGbo2kA4bbDya+JSjJu6Om4riyTyckcmfB09zfGsLocOno6yohpajuxeTK4NDxa2074tayjeJmWtxXTZr5IyViZrt1dSOZ5r6LFcwST0BD4e5Mjc8bJHC9yOHVYX4lKsTEc7o8Nw5MOCK35p332Tiqea/cvbLUnTeaBjy7hcANfQq+izi0iMfEdq9rbxVQrnqepW0nzkn5z1qh4W/rT3y8oiICAgICAgICAgICAgICAg72UBeun9GOsKeO20urwmN8s931WPklv96sNP4p6is3vvGzq66m2mt+daQ7rQviWGehk/qaq4tyWpwWu9L98fVDKGimr6yGkpmh00zw1t9nnPENqz5R2ctq4qTe3RC4qWnw3KGAkuIZDE28slrulf7yTsCjM7vJWtl1ubm55nwV9jWecXr5XCjldQ0+8yO2mfO7sssxs72DhOHFG9/Snw/O9yocxY5BJpx4tW6X35S8czrhT5m1Oi01o2nHHy+SdZRzv/ABGZlBizWsqX6opm6myHgI3j0eZRtXbocTXcM8jHlMXPX5NLdIy5HG04zRRtbd1qprRa99j/AHHkUqW6l3CdZO/kbz3fb7K+VjvLVh+ipn6cOpUz67zFv7n/AD+qqgrZemnoVtJ85J+c9apeGv6098vKIiAgICAgICAgICAgICAgIJBkwXr5/RDrUb22h2eCx/5rd31WVkxts0Yd6T3FU1yb2djiMf0l/wA64SDdVbpYhh3oX9YWM1+Ts0eB+pfvj6tbcyo2y47NUOF/g8Hg8RcbX5gedYw25UrONXmuGKR1z8mzupVkklZSUDXERRsMrh9px1DmAPOp5L7Tsq4Jhjk2yzHP0fdBXNWK3dzZ5IV1bGz4C5pBa4tcDcEbQd4qyJ3YmInmldeHP74MpwuqQNKrpNGW2861jbluodEvGZYnTamYr/jKkW30BpCzra/Oth7LuWtB9FUf6cOpUz6zzF/7n/P6qqCtemnoVtJ87J+c9apeGv6098vKIiAgICAgICAgICAgICAgIJJkZuliFR6Ida1tVbk0h2uB/wCtbu+qzcnstmXDzb6z3FaWDJvliHY4l/6l/wA64d7dPbpV+H+hf1hT11+Tav7tDgXqZO+PqxbmsrYsXqoXGxmguOPRP/ZR0WXe81T45SZw1v7J+Zum0jm4nS1dvk5otC/3mnsI6VPWTybRPtY4Jk3x2x9cc/xQtzVTTK7jGWraplRmGN2ratmtt2Nl04DGcGylTCrGi6npe6Sj7JsXOHOSFZ1vGai3l9Vaa9cqSFyLutpEXNuFXw9jttC1oPoqj/Th1KqfWeYv/c/5/VVQVz03UraT52T8561Q8Nf1p75eUREBAQEBAQEBAQEBAQEBAQSrc+Zp4lU+hH9S0OI22xR3uxwWds1u76rTyrDo5goXfie4rmaS2+err8Rt/S3/ADrdrdFj062hPBE/rC2OJ+vT92jwS21b98fVGcPnlw6vgrIRd0Tr24RvjmWhiyzjvF46nW1GOufFOOetZNVT0WZsFADvk5RpMePGjd2jYQu/MU1GLm63k8d8uiz++PGFbYvl3EcKeRPTvkiGyaJpLT5+DlXKyYcuKdpjm9r1Om1+DPHoztPsn853KjgkmeI4IpJXnYyNhcTyBSx2mZ5obdr0pG9piI98pjlPJcwqY6/GGdzZGQ6OnOsuO8XcA4l1MNLRz2cDiHFKzWcWHr6Z+zb3SceZBR/wemeDNPrnsfEZwecq/dRwnSTe/lrdEdHvn/hWZ2q2JeklakP0Vs/Th1KM+s8vf+5/z+qqlc9NPQraT5yT8561Q8Nf1p75eUREBAQEBAQEBAQEBAQEBAQTTcsi7ri9YLahTj+pczik7Yo73U4Vbk5Z7lwYBTCLFqV51Wf7lytHP9RV0NZk3wWh1c40xmmpX2Ngxw6Qt3isc9J72lwzJyItHcjElFYbFyYs7Fcz3htfWYNMX0zg6N3jxO8V3YeNbOn1V8M+j0K8+nxamu1un2/nSlNJnLDXgfC+60z9/SYXDnC6+PiOG0elzOPk4TqIn0PShszZswOJpca9p4mRvcegK3zzB2ldeGaqZ25HyhGsbz658bosIhcwn6+Uax5m9vMq51sT6rpabgvPys8/tH3QGdz5ZHSSuc+R50nOcbkkqeO+/O7sVisRERtEMBW5SWJWq5pp9y1jZvAd/Dm3B4SB2qX+Ty2/L4lvXtfVVCteonoVtJ87J+c9apeFv6098vKIiAgICAgICAgICAgICAgIJ9uNuYcw1cT7aT6W7Rw2cLrl8WifIxMe1t6K3JyLnij0C1zdrdYXn63msxMOhaeVG0u/KyPE6PUbO2j7pXorVprsHN/1LmVm2C7h1GGyxkh0RPAWi4XEyaXNjnaaz+zo49RWefdzp8PkOyF/qFQjHk7M/CWzTUVjrcqqw6YbIJfZnsU+Rk7M/CW5j1OPtR8Ycyehqbm1LPyRO7FKKX7M/CW1XUYu3HxhpyUNX/lKj2LuxbGOt+zPwlZGfF24+MMD6KsJ1UVUTwCB/Yt/FyvYTmxduPjDvZbyXW4hUxzYnC6moWm72yCz5RwAbw4SV0KbuXreJ48dJrine3hDrbpeNRMpmYJSubpkh89tjGjY3l2+Ycatq0uE6abXnPb9lck6IJO8Lq2XoLzERMyrZ5DnvINwXEjnVLwtp3mZfEYEBAQEBAQEBAQEBAQEBAQdTLOMSYDjtHiUYLhDJ8o0fzRnU4c1+UBVZ8UZsc0nr/ISpbk2iX6SoquCupIqukkEsEzQ+ORp1OBXkMlLY7TW3S6tbRaN4bcEz4HaURtwjhU8Ge+G3KpLF8dbxzt+PFdXykRv90rrU4tXb0687VtpZ35peji0Y+qk6FP9WxdmfBHzS/tYZMdij2wyHmWf1bF2Z8E40Vp64aUub6aI+FSz8hHapfqeKeqV9eFZbdFoaz8+ULNtJU/7e1TjiGOeqV0cFzz/AJR4sD90SgAP9iqudvarqautuo/Q83ajxcPGd0GsqozFhtO2ladXdXu038g2DpV9bxLawcFpWYtlnf3QhUjnSPc+Rxc9xJc5xuSTvk8Kvq7EREc0dDjZkr20lC6Fjh3eYaLRwN3z7lm0uZxPVRixciPWn5e1Ct6yg8sICAgICAgICAgICAgICAgICCU5OztiOV3mJn9poHm76Z5tY8LTvHoPStTVaLHqOeeafatx5bY+5aOG7p2WK2MGeplopd+OpjOr/ULjp5FxMnC9RWfRjfubddTSel0O/rK3lqj9cqnzDU9iU/L09oc9ZW8tUnrLPmOp7Enl8ftYJs7ZXcCBjVJ6yz5jqexKddTjjrcatzZl599HFqZ3mcpxodR2Jb+PW4I6bORPmPBXX0cRgPKrq6PPHTVtxxDTduGnJjuFH/HRHlW5jwZI6YT/AFHS9uGB+OYYBf4ZGRz9S3qVmGJ4lpdvXhy67M9OxtqGN0r/ALbxotHIdZV8S0M/GaRG2KN596MVNRLVTunneXvdtJ/9sRwMuS2W83vO8yxIrEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEZEYEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQf/Z" alt="Instagram" /></a>
+      <a href="https://twitter.com/i/flow/login" target="_blank"><img id ="cat" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAHwA3AMBEQACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAAAQIGBwMEBQj/xAA6EAACAQMCAwYDBQUJAAAAAAAAAQIDBBEFIQYxUQcSQWGBkRNxoSMyQlKxFCIkM9EVFjVTYmOSssH/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQQFAgMG/8QALREBAAIBBAECBAUFAQAAAAAAAAECAwQRITESBSITMkFRFGGhsdFCUnGBkSP/2gAMAwEAAhEDEQA/ANGgAAAAAAAAAAAAAAAAE4ZId1gO6ydgIEEAAAAAAAAAAAAAAAAAAAJSyTsDQEEAAAAWisvC5nUQM54d7OL2/hC41Wo7KhJZjBRzUkvl+H138i5i0k25twzdR6lTHO1OZ/Rm1p2fcOW8EpWtSvLH361VvPosL6Fmumxx9Gdf1DPae9v8Iu+z7hy4TUbSpQk1hSo1WmvfK+hM6bFP0K+oZ6/XdhnEXZveWUJV9Iqu8pxWZUpJKol5eDK2TRzWN68tDB6lS8+OTiWC1KbhJqSaa2aksNFKYmGnE7qHIAAAAAAAAAAAAAAAAAGf9nPCtDVKNxf6pSU7VxdKlB/il4y9PDzyXtLgi8Ta3TL9Q1c4pilJ5+rHuLOG7nh6+dOopTtZv7CtjaS6PzPHNhnHO09Lel1Nc9N44n6w8LB4LKCAAlEwNodmHClN0o63qFJSk3/C05LZL8/9PfoaOlwxt5WY3qGqnf4VP9/w2Q8N7svMgyAbA43LclDAe0fhWndWtTWLCkoXFJZuIRX8yP5vmvr6FPVYItHlHbV9P1c1n4V+p6aqa6GZs3FqVGpWl3aNOdSXSMW2IrM9Im0R2icXCTjKLUk8NdCJjZKhAAAAAAAAAAAAABKTfI6gfQfDtjDTtEsbSmklTorO3OT3b92zcx18KRD5PPknJlteXZ1LTrXVLOdpf0Y1aM+cX4Pqn4PzFq1tG1oRjyXxW8qTtLUPFfA1/osp17VTu7H/ADIx/eprpJf+rb5Gbl01qcxzDf02ux5eLcSxJr5FWYXkYIHPYW0ry9oW0XiVapGCfTLwd0rvOzm9vGs2+z6NtqFO0tqVtQio06UFCCXgksG3EbRs+TtabTNp+rl26EuUMCriEIcehIpNKUXGSTi1hp+KGxvsxqlwdw1p1OVerZ0nGC70p3M3KMV55eMHjGnxRzMLltdqb8RP/GF8T8YUcS0/hqlTtLVLuyuKUFBzXSOFsvMqZtTEe3Fx+bR0ugnf4mfmft2weW+WZ7UVAAAAAAAAAAAAABenLuyTfg8nUTsTy+jbOcalrQnH7sqcWvY3o6fIWja0w7CDlISxjXOA9G1dzqwpO0uZc6lDZN+ceRXyael+el3Drs2PjuPzYNqfZlrNq3KznQvKa5dx9yXs9vqVLaS0dNLH6lit83Dz9F0PVdN4h0+d9pl3TpwuIOUnRk4rfqtjnHivW8bw9cufFkw28bR03e+Zqvm0gSkAaAq2EOKex1CHn6zaafdWedWjCVrTfel8SbjBebw0n6nNq1tHu6euK+Slv/PtrTX9d4doOdvoWi2dWS2/aKtFOPonz+bM/Lnw14x1ifzbODS6i3uy5Jj8olhVWpKrOU5470nltLH0RQmZnmWnEREbQoQkAAAAAAAAAAAACUdQN1dm+rx1Lh6lbTlm5svs5rx7v4X7behrabJ54+e4fOa/B8PLNo6llqLCktgCUiBKCTwCFMEgBZciAYHFN7nUIlV7iBqztelXWqWUXVn8CVDKp9793vJvLx13M/WzO8Q2/StvC07c7tftmfLWQQAAAAAAAAAAAAAAMp7O7Wzvte/ZL+jTrUqtGa7s+qw1gtaSK2ybWhR1970xeVJ2mJbO0zg7TNK1GN9pkrm2ml3ZQVTvQnHo1LL8Opo1w1pO8MfJq8uWnhfaWRHqqpRAsASCU42IEKJKE90JMECGtgONxOkKuOEShqvth/xHTl4qjL9TO13zVbfpMey3+WvSg1ggAAAAAAAAAAAAAAd/RL+el6paX1LeVCopNfmXivVZXqeuK/haLPPNjjLjmn3fQdjdUb61o3VrNToVoqUJLxRtRMTG8Plb1mtprPcOxyDlIFkglOAIbx4ECUwAE4AhkiMbECriTuhpvtbuFU4mhQUsqhbRTXSTbf6NGbrLe/Zv+mV2wzP3lhBSaIAAAAAAAAAAAAAABKZMDY3BGqa3w7GNC/0u9qaXV/ejONKUvht/ijjmn0NDBbJSNpjhlavHhz81tHl+7Z9vXpXVGNehPv05cny+nh8i9DFtWaztLmjvuRJC+CEpAh8gOPfJ05WiErnKTYCEAfsSPnfiu/Wp8Q395B5hUrNQec5itl9EZGa/leZfT6bH8PFWryDwe4AAAAAAAAAAAAAABKJgbh7LuIIXmkx0qvU/ibVfZ5e86edsdccvY1NLli1fGe4YPqOnml/iR1P7s6e5ahnLQWI7nMphYAwKroBCRKEpA2WISq3uSbpbBuxzj3WVovDdxUjPFe4ToUUueWnl+iyeWe/jSVnRYZy5Yj6RzLQjMiX0qDkAAAAAAAAAAAAAACRJOw7NjeXFjdU7m0qypVqbzCceaPSkzWd4cXrW9ZraN4bf4S49t9ZULW/pSoXqX3oRcqc/lj7vyNHFmi3EsLVaGcXupzDNN+RY2UBMjY3Spb7jY3OUtgJwRulDbRIII3Q92AlJQi5SlGMYptuTwkuoIjdovj7iL+39Yn8CTdlb/Z0F+brL1/TBl6jL5W2jqH0ei0/wcfPcsWKy4EAAAAAAAAAAAAAErmB73CMtDlqSo8Q0HO2qpRjVVSUfhSzzeGtv0PfB4eW11fVRl8N8U8w2tHs94XaUlp8pJrKf7RUw1/yND8Pi+zFnXaj+79I/h27bgrhu2/l6RQk/91yqf9mzuMOOOocTrM892l7VtbULWPctqFKjHpTgo/odxGyvNpt3LlwiUI7oQhrcGyy5EJEwJwAAjkyYGr+0rjGMlU0TTKmV926qxez/ANCf6v0KWpzf01a2g0fPxb/6axk9yhMthByAAAAAAAAAAAAAAAFoPD3RIzjgjjyrosYWOpKVawT/AHJLedH5dV5e3QuYdRNeLdM/V6GM3upxZt6xvLa/tYXNlWhWozWYzg8o0K2iY3hh3rak+No2lzkuZQECWAnZJAnAAABx169K3ozrV6kadOCzKcnhJebHXMpiJmdoas427QncwqafoMpQpPMal1yc14qPRefMpZtTv7atjSenxXa+WOfs1xJ5fIozLVVOQAAAAAAAAAAAAAAAAAJTaJHp6Hr2o6Jc/G064lTz9+D3hP5o9aZbU5h5ZcFM0bXhsrRO1CxrwjT1m3la1PGpRi5wfnjmvqXaaus/Mycvpl4n2TvH6sz07WNN1OClYX1vXWM4hNZ9izW8W6lQvivT5o2d86eW6BsmEobDq3uoWdhBzvbqjbxXN1ZqP0OZmK9uqUvf5Y3YdrXabpVpCUNMpzvqy2Tw4U8/N7v0RXvqqR1yv4vTctp9/ENa8QcTarr9TOoXH2cXmNGmu7Tj6ePqU8mabtXBpseH5YeM22t2eCwqQAAAAAAAAAAAAAAAAAAAACRORuJjOUXmLcX1TwTuieXp23EWs2rXwNWvYJeCrya9m8HpGa9epeVtPht3WHd/vrxH3cf2xcey/odfiMn3ef4LT/2upc8S63c5+Nq99JNYcfjyS9k8HM5r27l6V0+GvVYeZUqSqS705SlLrJ5PObTPb1iIjpTJG6UACAAAAAAAAAAAAAAAAAAAAAAAACQAAAAAgAAAAAAAAAAAAAAf/9k=" alt="twitter" /></a>
+    </div>
+    <div class="foot">© 2023 Nike, Inc. All Rights Reserved</div>
+  </footer>
+  <!-- Modal -->
+  <div id="modal1" class="modal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">Best Deal OFFER ever</div>
+        <div class="modal-body">Don't miss out buy now and save big</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal2" class="modal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">Best Deal OFFER ever</div>
+        <div class="modal-body">Don't miss out buy now and save big</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"
+    integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+    integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $(".nav-link").on("click", function (e) {
+        e.preventDefault();
+        var hash = this.hash;
+        $("html, body").animate(
+          {
+            scrollTop: $(hash).offset().top,
+          },
+          1000,
+          function () {
+            window.location.hash = hash;
+          }
+        );
+      });
+    });
+  </script>
+</body>
+
+</html>
