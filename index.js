@@ -1,1 +1,1 @@
-alert("The web is working  perfectly");
+alert("The web is working  perfectly well");
